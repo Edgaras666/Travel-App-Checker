@@ -11,15 +11,7 @@ load_dotenv()
 
 app = Flask(__name__)
 
-CORS(app, resources={
-    r"/check": {
-        "origins": [
-            "http://localhost:3000",
-            "http://127.0.0.1:3000",
-            "https://travel-app-checker.vercel.app/"
-        ]
-    }
-})
+CORS(app)
 
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 MODEL_NAME = os.getenv("GEMINI_MODEL", "gemini-2.5-flash")
