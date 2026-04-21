@@ -1,97 +1,89 @@
-### Travel Safety Checker ###
+# Travel Safety Checker
 
-Travel Safety Checker is an AI-powered web application that helps users check whether a country is currently safe to travel to.
+Travel Safety Checker is an AI-powered web application that helps users quickly check whether a country is currently safe to travel to.
 
 The app uses Google Gemini AI to generate a travel safety overview and provides:
 
 * Safety score (0 to 100)
-* Safety level
+* Safety level (Safe / Caution / Avoid)
 * Natural disaster summary
 * Conflict / protest summary
 * Practical travel advice
 
+---
+
+# Live Demo
+
+[https://travel-app-checker.vercel.app]
+
+---
+
+# GitHub Repository
+
+[https://github.com/Edgaras666/Travel-App-Checker]
+
+---
+
 # Technologies Used
 
+## Frontend
+
 * React
+
+## Backend
+
 * Python
+
+## Framework
+
 * Flask
+
+## AI Provider
+
 * Google Gemini API
+
+## Deployment
+
+* Frontend hosted on Vercel
+* Backend hosted on Render
+
+---
 
 # Project Structure
 
-travel-safety-checker/
+Travel-App-Checker/
 ├── frontend/
 ├── backend/
 ├── README.md
 └── .gitignore
 
-### Full Setup Guide ###
+---
 
-## 1. Download / Clone Project
+# How To Test The App (Live Website)
 
-git clone YOUR_GITHUB_REPO_URL
-cd travel-safety-checker
+## Open the live website:
 
-If using ZIP download, simply extract and open the project folder.
+[https://travel-app-checker.vercel.app](https://travel-app-checker.vercel.app)
 
-## 2. Backend Setup
+## Test Steps
 
-Open terminal inside project folder:
+1. Open the website in browser
 
-cd backend
-python -m venv venv
+2. Type a country name in the search box, for example:
 
-Activate Virtual Environment
+* Japan
+* France
+* Brazil
+* Thailand
+* Ukraine
 
-Windows:
+3. Click:
 
-venv\Scripts\activate
+Check Safety
 
-Mac / Linux:
+4. Wait a few seconds while the AI checks travel conditions.
 
-source venv/bin/activate
-
-Install Backend Packages:
-
-pip install -r requirements.txt
-
-Create backend/.env file and paste:
-
-GEMINI_API_KEY=your_key_here
-
-Run Backend:
-
-python app.py
-
-Backend runs on:
-
-http://127.0.0.1:5000
-
-## 3. Frontend Setup
-
-Open SECOND terminal inside project folder:
-
-cd frontend
-npm install
-
-Create frontend/.env file and paste:
-
-REACT_APP_API_BASE_URL=http://127.0.0.1:5000
-
-Run Frontend:
-
-npm start
-
-Frontend runs on:
-
-http://localhost:3000
-
-# How To Use
-
-1. Open browser at http://localhost:3000
-2. Enter country name
-3. Click Check Safety
-4. Review results:
+5. Review the generated result:
 
 * Safety score
 * Safety level
@@ -99,35 +91,103 @@ http://localhost:3000
 * Conflicts / protests
 * Travel advice
 
+---
+
+# Example Test Cases
+
+## Safe Destination
+
+Japan
+
+Expected:
+High score, low risk, practical advice.
+
+## Medium Risk Destination
+
+Brazil
+
+Expected:
+Mixed score, caution areas, crime or disruption notes.
+
+## Higher Risk Destination
+
+Ukraine
+
+Expected:
+Lower score, conflict warnings, avoid unnecessary travel.
+
+---
+
 # Features
 
 * Country autocomplete search
 * AI travel safety analysis
-* Safety score bar
+* Score indicator bar
 * Country flag display
-* Loading indicator
+* Loading state while checking
 * Error handling
 * Responsive modern UI
+* Public live deployment
+
+---
 
 # How It Works
 
-1. User enters country name
-2. React frontend sends POST request to backend
-3. Flask backend validates request
-4. Backend sends prompt to Gemini API
-5. Gemini returns structured result
-6. Frontend displays data
+1. User enters a country name
+2. React frontend sends request to Flask backend
+3. Backend validates request
+4. Backend sends prompt to Google Gemini API
+5. Gemini returns structured travel safety data
+6. Frontend displays results to the user
+
+---
+
+# Local Development Setup
+
+## Backend
+
+cd backend
+
+python -m venv venv
+
+Windows:
+
+venv\Scripts\activate
+
+Install packages:
+
+pip install -r requirements.txt
+
+Run backend:
+
+python app.py
+
+## Frontend
+
+cd frontend
+
+npm install
+
+npm start
+
+---
 
 # Security Notes
 
-* API key stored only in backend .env
+* API key stored only in backend environment variables
 * API key never exposed in frontend
 * .env files ignored using .gitignore
 
+---
 
 # Disclaimer
 
-AI-generated information. Always verify travel information with official travel advisories, embassies, airlines, and local government sources.
+This app provides AI-generated travel safety summaries.
+
+Users should always verify information using official travel advisories, embassies, airlines, and local government sources before making travel decisions.
+
+---
 
 # Author
-Edgaras B.
+
+Edgaras
